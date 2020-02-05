@@ -17,6 +17,10 @@ namespace week_2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //this enables us to refresh automatically when we make changes to cshtml
+            //to use this feature we have to install nuget package runtimecompilation
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

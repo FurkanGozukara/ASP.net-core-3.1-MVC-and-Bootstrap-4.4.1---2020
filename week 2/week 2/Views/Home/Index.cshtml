@@ -1,6 +1,7 @@
-﻿
+﻿@model week_2.Models.Movie
 @{
     Layout = null;
+    var vrCustom = "<b>Home Town</b>";
 }
 
 <!DOCTYPE html>
@@ -8,8 +9,23 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@Model.srTitle</title>
 </head>
 <body>
+
+    <p>
+        The movie <b>@Model.srTitle</b> was
+        released
+        @Model.dtReleaseDate.ToLongDateString()
+    </p>
+
+    <p>hello world<br /> my name is @Model.srMyName  2 time is @DateTime.Now</p>
+
+    <p>default encoded : @vrCustom</p>
+
+    <p>raw output : @Html.Raw(vrCustom)</p>
+
+    <p>raw my name is : @Html.Raw(Model.srMyName)</p>
+
 </body>
 </html>

@@ -13,7 +13,16 @@ namespace week_2.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return Content("hello world mvc");
+            //new means compose an instance an object of that class
+            //We instantiated a new Movie object
+            Models.Movie myMovieCs = new Models.Movie()
+            {
+                srTitle = "The Godfather 3",
+                dtReleaseDate = new DateTime(1964, 11, 15, 23, 15, 05),
+                srMyName = "Furkan Gözükara"
+            };
+
+            return View(myMovieCs);
         }
     }
 }
