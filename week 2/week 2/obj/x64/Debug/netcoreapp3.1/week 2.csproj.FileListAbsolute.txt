@@ -1,0 +1,17 @@
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.exe
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.deps.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.runtimeconfig.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.runtimeconfig.dev.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.dll
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\bin\x64\Debug\netcoreapp3.1\week 2.pdb
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\staticwebassets\week 2.StaticWebAssets.Manifest.cache
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\staticwebassets\week 2.StaticWebAssets.xml
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.AssemblyInfoInputs.cache
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.AssemblyInfo.cs
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.RazorTargetAssemblyInfo.cache
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.dll
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\x64\Debug\netcoreapp3.1\week 2.pdb
