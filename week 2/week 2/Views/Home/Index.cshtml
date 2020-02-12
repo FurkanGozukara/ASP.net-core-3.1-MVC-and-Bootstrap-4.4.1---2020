@@ -124,5 +124,46 @@
             }
         }
     </ul>
+
+    @{
+        string funcReturnProcessedVal(double dbl1, double dbl2)
+        {
+            return $"<div>{(dbl1 * dbl2).ToString("N0")}</div>";
+        }
+    }
+
+    @{
+        void funcReturnProcessedVal2(double dbl1, double dbl2)
+        {
+            <div>
+                @((dbl1 * dbl2).ToString("N0"))
+            </div>
+        }
+    }
+
+
+    @Html.Raw(funcReturnProcessedVal(321, 453))
+
+    @{
+        funcReturnProcessedVal2(342234, 32141);
+    }
+
+    @using week_2.Models
+
+    @{
+        Func<dynamic, object> movieTemplate = @<div>@item.srTitle [@item.dtReleaseDate.ToShortDateString()]</div>;
+
+List<Movie> movies = new List<Movie>();
+movies.Add(new Movie() { srTitle = "The Godfather", dtReleaseDate = new DateTime(1972, 3, 24) });
+movies.Add(new Movie() { srTitle = "Forrest Gump", dtReleaseDate = new DateTime(1994, 7, 6) });
+movies.Add(new Movie() { srTitle = "Fight Club", dtReleaseDate = new DateTime(1999, 10, 15) });
+
+    }
+
+    @foreach (var movie in movies)
+    {
+        @movieTemplate(movie)
+    }
+
 </body>
 </html>

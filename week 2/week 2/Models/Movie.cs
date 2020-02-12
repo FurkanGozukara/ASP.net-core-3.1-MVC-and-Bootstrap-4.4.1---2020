@@ -11,4 +11,11 @@ namespace week_2.Models
         public DateTime dtReleaseDate { get; set; }
         public string srMyName { get; set; }
     }
+
+    public class TvSeries
+    {
+        public string srTitle { get; set; }
+        public DateTime dtReleaseDate { get; set; }
+        public string srMyName { get; set; }
+    }
 }

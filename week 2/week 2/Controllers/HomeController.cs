@@ -25,9 +25,25 @@ namespace week_2.Controllers
            return View(myMovieCs);
         }
 
-        public IActionResult Index2()
+        public IActionResult Test()
         {
-            return View("Index2");
+            Models.Cars myCar = new Models.Cars
+            {
+                irCarPrice = 412,
+                srCarBrand = "bmw"
+            };
+            return View("Test2",myCar);
         }
+
+        public IActionResult Bus()
+        {
+            Models.Cars myCar = new Models.Cars
+            {
+                irCarPrice = 234234,
+                srCarBrand = "busss"
+            };
+            return View("/Views/Test/Bus3.cshtml", myCar);
+        }
+
     }
 }
