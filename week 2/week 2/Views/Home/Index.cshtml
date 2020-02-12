@@ -27,5 +27,40 @@
 
     <p>raw my name is : @Html.Raw(Model.srMyName)</p>
 
+    @{
+        double dblVal1 = 54788 * 5458;
+        var myScript = "<script>alert('be alerted')</script>";
+    }
+
+    <p>@dblVal1.ToString("N0")</p>
+
+    <p>default @@ behaviour encoded: @myScript</p>
+
+    <p>@Html.Raw(myScript)</p>
+
+    <p>my name is @("furkan gözükara".ToUpper()) and my age  is @(5 + 5)</p>
+
+    @{
+        var sum = 32 + 10;
+        var greeting = "Hello, world!";
+        var text = "";
+        for (int i = 0; i < 3; i++)
+        {
+            text += greeting + " The result is: " + sum + "<br/>";
+        }
+    }
+
+    <h2>CodeBlocks</h2>
+    Text: @Html.Raw(text)
+
+    @{ 
+        var mynumber = 342523431.ToString("N0");
+
+            <p>this is my text</p>
+            <br />
+            this is my text
+
+    }
+
 </body>
 </html>
