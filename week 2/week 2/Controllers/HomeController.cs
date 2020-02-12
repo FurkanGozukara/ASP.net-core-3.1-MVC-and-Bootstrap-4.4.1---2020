@@ -22,7 +22,12 @@ namespace week_2.Controllers
                 srMyName = "Furkan Gözükara"
             };
 
-            return View(myMovieCs);
+           return View(myMovieCs);
+        }
+
+        public IActionResult Index2()
+        {
+            return View("Index2");
         }
     }
 }

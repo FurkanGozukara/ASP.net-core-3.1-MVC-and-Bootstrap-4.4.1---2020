@@ -3,43 +3,30 @@
     Layout = null;
     var vrCustom = "<b>Home Town</b>";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@Model.srTitle</title>
 </head>
 <body>
-
     <p>
         The movie <b>@Model.srTitle</b> was
         released
         @Model.dtReleaseDate.ToLongDateString()
     </p>
-
     <p>hello world<br /> my name is @Model.srMyName  2 time is @DateTime.Now</p>
-
     <p>default encoded : @vrCustom</p>
-
     <p>raw output : @Html.Raw(vrCustom)</p>
-
     <p>raw my name is : @Html.Raw(Model.srMyName)</p>
-
     @{
         double dblVal1 = 54788 * 5458;
         var myScript = "<script>alert('be alerted')</script>";
     }
-
     <p>@dblVal1.ToString("N0")</p>
-
     <p>default @@ behaviour encoded: @myScript</p>
-
     <p>@Html.Raw(myScript)</p>
-
     <p>my name is @("furkan gözükara".ToUpper()) and my age  is @(5 + 5)</p>
-
     @{
         var sum = 32 + 10;
         var greeting = "Hello, world!";
@@ -49,18 +36,93 @@
             text += greeting + " The result is: " + sum + "<br/>";
         }
     }
-
     <h2>CodeBlocks</h2>
     Text: @Html.Raw(text)
-
-    @{ 
+    @{
         var mynumber = 342523431.ToString("N0");
-
-            <p>this is my text</p>
-            <br />
+        <p>
             this is my text
-
+            <b>gg</b>
+            inside tag is understood
+        </p>
+        // this line commented
+        <br />
+        @:this is my text <b>gg</b> @*no default html encoding*@
     }
+    @{
+        string helloWorldMsg = "Hello, world v2!";
+    }
+    <div>
+        @helloWorldMsg
+    </div>
+    @if (DateTime.Now.Year > 2042)
+    {
+        <text>The year 2042 has finally arrived! </text>
+        @:The year 2042 has finally arrived!
+        <span style="color:rebeccapurple;">The year 2042 has finally arrived!</span>
+    }
+    else
+    {
+        <div>the current date @DateTime.Now is smaller than 2042</div>
+        <span>this is span text</span>
+        <span>this span text 2</span>
+        <div>this is div text</div>
+        <span>this span text 3</span>
+    }
+    @{
+        List<string> names = new List<string>()
+{
+            "John Doe",
+            "Jane Doe",
+            "Joe Doe",
+            "Jenna Doe",
+            "Doggy Doe"
+        };
+    }
+    <ul>
+        @for (int i = 0; i < names.Count; i++)
+        {
+            <li>@names[i]</li>
+        }
+    </ul>
+    <ul>
+        @foreach (string vrName in names)
+        {
+            <li>@vrName</li>
+        }
+    </ul>
+    <ul>
+        @{ int beginIndex = 0;
+            while (true)
+            {
+                if (beginIndex >= names.Count)
+                    break;
+                <li>@names[beginIndex]</li>
+                beginIndex++;
+            }
+        }
+    </ul>
+    <ul>
+        @{
+            var counter = 0;
+            do
+            {
+                <li>@names[counter++]</li>
+            } while (counter < names.Count);
+        }
+    </ul>
+    <ul>
+        @for (int i = 0; i < names.Count; i++)
+        {
+            <li>@names[i]</li>
 
+            @if (i >= 2)
+            {
+                <li>...and so on</li>
+
+                break;
+            }
+        }
+    </ul>
 </body>
 </html>
