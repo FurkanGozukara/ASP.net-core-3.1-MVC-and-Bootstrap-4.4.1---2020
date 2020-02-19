@@ -45,5 +45,10 @@ namespace week_2.Controllers
             return View("/Views/Test/Bus3.cshtml", myCar);
         }
 
+        public IActionResult Deneme()
+        {
+            return View("Deneme");
+        }
+
     }
 }

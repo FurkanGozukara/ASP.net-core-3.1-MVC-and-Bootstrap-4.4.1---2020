@@ -1,17 +1,17 @@
 ﻿@model week_2.Models.Movie
 @{
-    Layout = null;
     var vrCustom = "<b>Home Town</b>";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@Model.srTitle</title>
-</head>
-<body>
-    @await Html.PartialAsync("_MenuBar",Model,new ViewDataDictionary(ViewData) { { "index", 75 } })
 
+@section Title {
+    @Model.srTitle
+}
+
+<body>
+    @await Html.PartialAsync("_MenuBar", Model, new ViewDataDictionary(ViewData) { { "index", 75 } })
+    @{ 
+        DataRow drw;//system data reference is coming from view imports file placed under views
+    }
     <p>
         The movie <b>@Model.srTitle</b> was
         released
@@ -168,4 +168,3 @@ movies.Add(new Movie() { srTitle = "Fight Club", dtReleaseDate = new DateTime(19
     }
 
 </body>
-</html>
