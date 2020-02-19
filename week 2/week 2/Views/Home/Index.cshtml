@@ -10,6 +10,8 @@
     <title>@Model.srTitle</title>
 </head>
 <body>
+    @await Html.PartialAsync("_MenuBar",Model,new ViewDataDictionary(ViewData) { { "index", 75 } })
+
     <p>
         The movie <b>@Model.srTitle</b> was
         released
