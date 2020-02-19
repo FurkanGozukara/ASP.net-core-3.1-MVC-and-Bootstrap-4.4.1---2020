@@ -387,3 +387,4 @@ C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\Debug\netcor
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\Debug\netcoreapp3.1\week 2.RazorTargetAssemblyInfo.cs
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\Debug\netcoreapp3.1\week 2.Views.pdb
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\Debug\netcoreapp3.1\Razor\Views\Home\Test2.cshtml.g.cs
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\obj\Debug\netcoreapp3.1\Razor\Views\Test\Bus3.cshtml.g.cs
