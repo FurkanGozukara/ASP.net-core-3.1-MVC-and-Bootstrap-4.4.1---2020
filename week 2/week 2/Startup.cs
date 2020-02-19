@@ -35,10 +35,10 @@ namespace week_2
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+            
                 endpoints.MapControllerRoute("Products", "Products/{action=Index}/{id?}", new { controller = "Products" });
+                endpoints.MapControllerRoute("Default", "{controller=Home}/{action=Index}/{id?}");
             });
-
 
 
         }

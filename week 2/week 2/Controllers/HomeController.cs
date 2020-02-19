@@ -11,7 +11,7 @@ namespace week_2.Controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             //new means compose an instance an object of that class
             //We instantiated a new Movie object
@@ -19,7 +19,7 @@ namespace week_2.Controllers
             {
                 srTitle = "The Godfather 3",
                 dtReleaseDate = new DateTime(1964, 11, 15, 23, 15, 05),
-                srMyName = "Furkan Gözükara"
+                srMyName = "Furkan Gözükara : id=" + id
             };
 
            return View(myMovieCs);
