@@ -3,6 +3,8 @@
     Layout = null;
 }
 
+@model week_5.Models.WebUser 
+
 <!DOCTYPE html>
 
 <html>
@@ -11,6 +13,21 @@
     <title>Index</title>
 </head>
 <body>
-    hello world
+
+    @using (var form = Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+        </div>
+
+        <input type="submit" value="Submit" />
+    }
+
 </body>
 </html>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using week_5.Models;
 
 namespace week_5.Controllers
 {
@@ -12,6 +13,20 @@ namespace week_5.Controllers
         public IActionResult Index()
         {
             return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult SimpleBinding()
+        {
+            var webUser = new WebUser() { FirstName = "John", LastName = "Doe" };
+            return View("Index", webUser);
+        }
+
+        [HttpPost]
+        public IActionResult SimpleBinding(WebUser webUser)
+        {
+            //TODO: Update in DB here...
+            return Content($"User {webUser.FirstName} updated!");
         }
     }
 }
