@@ -8,6 +8,7 @@ namespace week_5.Models
 {
     public class CheckUser
     {
+        public int irFormId { get; set; }
         [Required(ErrorMessage = "bu alan boş bırakılamaz")]
         [StringLength(25)]
 

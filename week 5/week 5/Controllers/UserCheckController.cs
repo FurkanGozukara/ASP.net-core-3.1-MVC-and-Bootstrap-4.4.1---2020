@@ -18,7 +18,7 @@ namespace week_5.Controllers
 
         [Route("UserCheck")]
         [HttpPost]
-        public IActionResult SimpleValidation(CheckUser model)
+        public IActionResult SimpleValidation(CheckUser model, string hidden1)
         {
             if (ModelState.IsValid)
                 return Content($"SimpleValidation 1 email {model.MailAddress}");
@@ -28,7 +28,7 @@ namespace week_5.Controllers
 
         [Route("UserCheck2")]
         [HttpPost]
-        public IActionResult SimpleValidation2(CheckUser model)
+        public IActionResult SimpleValidation2(CheckUser model, string hidden1)
         {
             if (ModelState.IsValid)
                 return Content($"SimpleValidation 2 email {model.MailAddress}");

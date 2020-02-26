@@ -16,6 +16,10 @@
 
     @using (var myForm = Html.BeginForm())
     {
+
+        <input type="hidden" id="" value="1" name="hidden1" />
+
+
         <div>
             @Html.LabelFor(m => m.FirstName)
             @Html.TextBoxFor(m => m.FirstName)
@@ -39,6 +43,9 @@
 
     @using (var myForm = Html.BeginForm())
     {
+
+        <input type="hidden" id="" value="2" name="hidden1" />
+
         <div>
             @Html.LabelFor(m => m.FirstName)
             @Html.TextBoxFor(m => m.FirstName)
