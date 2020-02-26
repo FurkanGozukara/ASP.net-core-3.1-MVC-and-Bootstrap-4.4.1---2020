@@ -15,6 +15,7 @@ namespace week_5.Controllers
             return View("Index");
         }
 
+        [Route("SimpleBinding")]
         [HttpGet]
         public IActionResult SimpleBinding()
         {
@@ -22,6 +23,7 @@ namespace week_5.Controllers
             return View("Index", webUser);
         }
 
+        [Route("SimpleBinding")]
         [HttpPost]
         public IActionResult SimpleBinding(WebUser webUser)
         {

@@ -31,8 +31,10 @@ namespace week_5
 
             app.UseEndpoints(endpoints =>
             {
+            
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute("defaultForm", "{controller=Home}/{action=SimpleBinding}/SimpleBinding");
+                endpoints.MapControllerRoute("usersBinding", "{controller=Users}/{action=Index}/{id?}");
+
             });
 
          
