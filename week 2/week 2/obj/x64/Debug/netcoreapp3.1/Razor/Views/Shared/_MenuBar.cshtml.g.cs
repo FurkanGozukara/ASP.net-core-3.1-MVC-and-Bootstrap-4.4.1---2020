@@ -12,7 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\Views\_ViewImports.cshtml"
+using System.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"27b4b2db1dffab8faaf7156d98719f37d46f0723", @"/Views/Shared/_MenuBar.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"06c6f3185eb132e7e8c98447e7daf83f0061ea2e", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__MenuBar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -3,7 +3,7 @@
     Layout = null;
 }
 
-@model week_2.Models.Cars
+@model week_2.Controllers.HomeController.mainTestModel;
 
 <!DOCTYPE html>
 
@@ -13,6 +13,7 @@
     <title>Test</title>
 </head>
 <body>
-    <p>car brand is @Model.srCarBrand</p><br /> <p>car price is @Model.irCarPrice</p> 
+    <p>car brand is @Model.carModel.srCarBrand</p><br /> <p>car price is @Model.carModel.irCarPrice</p>
+    <p>street @Model.addModel.StreetName</p><br /> <p>zip code  @Model.addModel.ZipCode</p>
 </body>
 </html>

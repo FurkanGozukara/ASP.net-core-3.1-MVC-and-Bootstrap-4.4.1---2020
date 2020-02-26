@@ -12,7 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\Views\_ViewImports.cshtml"
+using System.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b3a75c0756987348b6e83e940239b862f63d9286", @"/Views/Test/Bus3.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"06c6f3185eb132e7e8c98447e7daf83f0061ea2e", @"/Views/_ViewImports.cshtml")]
     public class Views_Test_Bus3 : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<week_2.Models.Cars>
     {
         #line hidden
@@ -51,7 +59,7 @@ namespace AspNetCore
 #nullable disable
             WriteLiteral("\r\n");
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3a75c0756987348b6e83e940239b862f63d92862986", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3a75c0756987348b6e83e940239b862f63d92863338", async() => {
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Bus3</title>\r\n");
             }
             );
@@ -65,7 +73,7 @@ namespace AspNetCore
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3a75c0756987348b6e83e940239b862f63d92864044", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3a75c0756987348b6e83e940239b862f63d92864396", async() => {
                 WriteLiteral("\r\n    <div style=\"color:red;\">");
 #nullable restore
 #line 16 "C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\Views\Test\Bus3.cshtml"

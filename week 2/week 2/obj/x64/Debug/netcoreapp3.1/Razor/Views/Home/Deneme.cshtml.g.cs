@@ -12,7 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 2\week 2\Views\_ViewImports.cshtml"
+using System.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"36a0749f051c7054f016d102ccbb084ca1075d13", @"/Views/Home/Deneme.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"06c6f3185eb132e7e8c98447e7daf83f0061ea2e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Deneme : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -45,7 +53,7 @@ namespace AspNetCore
             }
             );
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36a0749f051c7054f016d102ccbb084ca1075d132737", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36a0749f051c7054f016d102ccbb084ca1075d133089", async() => {
                 WriteLiteral("\r\n    deneme\r\n");
             }
             );

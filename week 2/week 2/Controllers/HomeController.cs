@@ -25,6 +25,12 @@ namespace week_2.Controllers
            return View(myMovieCs);
         }
 
+        public class mainTestModel
+        {
+            public ViewModels.AdressViewModel addModel;
+            public Models.Cars carModel;
+        }
+
         public IActionResult Test()
         {
             Models.Cars myCar = new Models.Cars
@@ -32,7 +38,13 @@ namespace week_2.Controllers
                 irCarPrice = 412,
                 srCarBrand = "bmw"
             };
-            return View("Test2",myCar);
+            ViewModels.AdressViewModel adresModel = new ViewModels.AdressViewModel
+            {
+                StreetName = "Toros Mah.",
+                ZipCode = "32122"
+            };
+            mainTestModel mainModel = new mainTestModel { addModel = adresModel, carModel = myCar };
+            return View("Test2", mainModel);
         }
 
         public IActionResult Bus()
