@@ -101,3 +101,4 @@ C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 5\week 5\obj\Debug\netcor
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 5\week 5\obj\Debug\netcoreapp3.1\week 5.Views.pdb
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 5\week 5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 5\week 5\obj\Debug\netcoreapp3.1\Razor\Views\UserCheck\Index.cshtml.g.cs
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 5\week 5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index2.cshtml.g.cs

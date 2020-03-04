@@ -30,5 +30,11 @@ namespace week_5.Controllers
             //TODO: Update in DB here...
             return Content($"User {webUser.FirstName} updated!");
         }
+
+        public IActionResult Index2(int _Price ,int _Weight)
+        {
+            Index2 myModel = new Index2 { irPrice = _Price, irWeight = _Weight };
+            return View("Index2", myModel);
+        }
     }
 }
