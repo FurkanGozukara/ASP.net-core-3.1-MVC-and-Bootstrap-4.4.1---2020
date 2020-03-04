@@ -1,18 +1,20 @@
 ﻿
-@{
-    Layout = null;
-}
 
 @model week_6.Models.csWebUser;
 
-<!DOCTYPE html>
+@section InsideHead {
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-</head>
-<body>
+
+    <style>
+        .field-validation-error {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+}
+
+@section TemplateBody {
+
     <h1>Create user</h1>
 
     <form method="post" asp-controller="Home" asp-action="Index">
@@ -39,5 +41,5 @@
         <br />
         <input type="submit" value="Create" />
     </form>
-</body>
-</html>
+
+}

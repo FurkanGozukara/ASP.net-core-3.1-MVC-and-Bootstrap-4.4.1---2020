@@ -10,15 +10,16 @@ namespace week_6.Models
     public class csWebUser
     {
         [Required]
-        [StringLength(25)]
+        [StringLength(10)]
+        [Display(Name = "Enter Your First Name:")]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(50, MinimumLength = 3)]
+        [StringLength(12, MinimumLength = 3)]
         public string LastName { get; set; }
 
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "geçerli olmayan bir eposta adresi girdiniz!")]
         public string MailAddress { get; set; }
     }
 }
