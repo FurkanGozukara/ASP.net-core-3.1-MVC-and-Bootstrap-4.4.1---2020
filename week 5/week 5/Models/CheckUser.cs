@@ -22,7 +22,31 @@ namespace week_5.Models
 
         [Required]
         [EmailAddress]
+        [Compare("MailRepeat")]
         [Display(Name = "Enter your email: ")]
         public string MailAddress { get; set; }
+
+        [Display(Name = "Repeat your email: ")]
+        public string MailRepeat { get; set; }
+
+        [ValidateWebDate]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]//this is optional
+        public DateTime dtBirth { get; set; }
+
+        public class ValidateWebDate : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                DateTime birthday = (DateTime)value;
+                if (birthday.Year < 1900)
+                    return new ValidationResult("Surely you are not THAT old?");
+                if (birthday.Year > 2000)
+                    return new ValidationResult("Sorry, you're too young for this website!");
+                if (birthday.Month == 12)
+                    return new ValidationResult("Sorry, we don't accept anyone born in December!");
+                return ValidationResult.Success;
+            }
+        }
     }
 }

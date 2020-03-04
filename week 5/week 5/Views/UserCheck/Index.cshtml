@@ -35,7 +35,15 @@
             @Html.TextBoxFor(m => m.MailAddress)
             @Html.ValidationMessageFor(m => m.MailAddress)
         </div>
-
+        <div>
+            @Html.LabelFor(m => m.MailRepeat)
+            @Html.TextBoxFor(m => m.MailRepeat)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.dtBirth)
+            @Html.EditorFor(m => m.dtBirth, new { @type = "date" })
+            @Html.ValidationMessageFor(m => m.dtBirth)
+        </div>
         <input type="submit" value="Submit" />
     }
 
