@@ -13,33 +13,58 @@
     </style>
 }
 
-@section TemplateBody {
 
-    <h1>Create user</h1>
+<h1>Create user</h1>
 
-    <form method="post" asp-controller="Home" asp-action="Index">
-        <div>
-            <label asp-for="FirstName"></label>
-            <br />
-            <input asp-for="FirstName" />
-            <span asp-validation-for="FirstName" style="color: red;"></span>
-        </div>
+<form method="post" asp-controller="Home" asp-action="Form1">
+    <div>
+        <label asp-for="FirstName"></label>
         <br />
-        <div>
-            <label asp-for="LastName"></label>
-            <br />
-            <input asp-for="LastName" />
-            <span asp-validation-for="LastName" style="color: red;"></span>
-        </div>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="LastName"></label>
         <br />
-        <div>
-            <label asp-for="MailAddress"></label>
-            <br />
-            <input asp-for="MailAddress" />
-            <span asp-validation-for="MailAddress" style="color: red;"></span>
-        </div>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="MailAddress"></label>
         <br />
-        <input type="submit" value="Create" />
-    </form>
+        <input asp-for="MailAddress" />
+        <span asp-validation-for="MailAddress" style="color: red;"></span>
+    </div>
+    <br />
+    <input type="submit" value="Create" />
+</form>
 
-}
+<hr />
+<h2>form 2</h2>
+
+<form method="post" asp-controller="Home" asp-action="Form2">
+    <div>
+        <label asp-for="FirstName"></label>
+        <br />
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="LastName"></label>
+        <br />
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName" style="color: red;"></span>
+    </div>
+    <br />
+    <div>
+        <label asp-for="MailAddress"></label>
+        <br />
+        <input asp-for="MailAddress" value="@Model?.FirstName" />
+        <span asp-validation-for="MailAddress" style="color: red;"></span>
+    </div>
+    <br />
+    <input type="submit" value="Create" />
+</form>

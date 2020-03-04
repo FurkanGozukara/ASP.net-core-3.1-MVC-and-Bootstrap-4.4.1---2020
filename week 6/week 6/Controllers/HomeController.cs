@@ -11,21 +11,29 @@ namespace week_6.Controllers
     {
         [Route("")]
         [Route("Home")]
-        [HttpGet]
         public IActionResult Index()
         {
             return View("Index");
         }
-
         [HttpPost]
-        public IActionResult Index(csWebUser myModel)
+        public IActionResult Form1(csWebUser myModel)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
 
             }
 
             return View("Index");
+        }
+
+        public IActionResult Form2(csWebUser myModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            myModel.FirstName = "Furkan";
+            return View("Index", myModel);
         }
     }
 }
