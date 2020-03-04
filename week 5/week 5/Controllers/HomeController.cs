@@ -36,5 +36,11 @@ namespace week_5.Controllers
             Index2 myModel = new Index2 { irPrice = _Price, irWeight = _Weight };
             return View("Index2", myModel);
         }
+        [HttpGet("Index3/p={_Price}&w={_Weight}")]
+        public IActionResult Index3(int _Price, int _Weight)
+        {
+            Index2 myModel = new Index2 { irPrice = _Price, irWeight = _Weight };
+            return View("Index2", myModel);
+        }
     }
 }
