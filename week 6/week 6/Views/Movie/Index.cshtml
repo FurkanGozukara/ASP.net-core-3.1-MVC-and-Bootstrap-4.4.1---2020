@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model week_6.Models.Movie
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @{ 
+        <ul>
+            @foreach (var movie in Model.lstMovies)
+            {
+                <li>
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.MovieId">@movie.MovieName</a>
+                </li>
+            }
+        </ul>
+
+    }
+</body>
+</html>

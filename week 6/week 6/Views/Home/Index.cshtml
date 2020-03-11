@@ -7,9 +7,9 @@
     <title>Index</title>
 
     <style>
-        body{
-            padding-left:50px;
-            padding-top:50px;
+        body {
+            padding-left: 50px;
+            padding-top: 50px;
         }
 
         .field-validation-error {
@@ -22,9 +22,27 @@
     </style>
 }
 
-<input asp-for="a"
 
+<br />
+<br />
+<textarea asp-for="FirstName" cols="25" rows="3"></textarea>
+<br />
+<br />
 
+<label asp-for="mySecondUser.Birthday"></label>
+<input asp-for="mySecondUser.Birthday" />
+<br />
+<label asp-for="mySecondUser.IsActive"></label>
+<input asp-for="mySecondUser.IsActive" />
+<br />
+<label asp-for="mySecondUser.MailAddress2"></label>
+<input asp-for="mySecondUser.MailAddress2" />
+<br />
+<label asp-for="mySecondUser.Password"></label>
+<input asp-for="mySecondUser.Password" />
+<br />
+<label asp-for="mySecondUser.PhoneNumber"></label>
+<input asp-for="mySecondUser.PhoneNumber" id="myCustomPhone" />
 <br />
 
 
@@ -62,6 +80,10 @@
 
 <form method="post" asp-controller="Home" asp-action="Form1">
     <div>
+        <label asp-for="userCountry"></label>
+        <select asp-items="@(new SelectList(Model.lstCountries))" asp-for="userCountry"></select>
+    </div>
+    <div>
         <label asp-for="FirstName"></label>
         <br />
         <input asp-for="FirstName" />
@@ -90,6 +112,10 @@
 
 <form method="post" asp-controller="Home" asp-action="Form2">
     <div>
+        <label asp-for="userLanguageId"></label>
+        <select asp-items="@(new SelectList(Model.lstLanguages,"Id","Name"))" asp-for="userLanguageId"></select>
+    </div>
+    <div>
         <label asp-for="FirstName"></label>
         <br />
         <input asp-for="FirstName" />
@@ -112,3 +138,36 @@
     <br />
     <input type="submit" value="Create" />
 </form>
+
+<script>
+
+    $("#myCustomPhone").on("keyup paste", function () {
+        // Remove invalid chars from the input
+        var input = this.value.replace(/[^0-9\(\)\s\-]/g, "");
+        var inputlen = input.length;
+        // Get just the numbers in the input
+        var numbers = this.value.replace(/\D/g, '');
+        var numberslen = numbers.length;
+        // Value to store the masked input
+        var newval = "";
+
+        // Loop through the existing numbers and apply the mask
+        for (var i = 0; i < numberslen; i++) {
+            if (i == 0) newval = "(" + numbers[i];
+            else if (i == 3) newval += ") " + numbers[i];
+            else if (i == 6) newval += "-" + numbers[i];
+            else newval += numbers[i];
+        }
+
+        // Re-add the non-digit characters to the end of the input that the user entered and that match the mask.
+        if (inputlen >= 1 && numberslen == 0 && input[0] == "(") newval = "(";
+        else if (inputlen >= 6 && numberslen == 3 && input[4] == ")" && input[5] == " ") newval += ") ";
+        else if (inputlen >= 5 && numberslen == 3 && input[4] == ")") newval += ")";
+        else if (inputlen >= 6 && numberslen == 3 && input[5] == " ") newval += " ";
+        else if (inputlen >= 10 && numberslen == 6 && input[9] == "-") newval += "-";
+
+        $(this).val(newval.substring(0, 14));
+    });
+
+
+</script>

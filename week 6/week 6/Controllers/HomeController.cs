@@ -13,7 +13,23 @@ namespace week_6.Controllers
         [Route("Home")]
         public IActionResult Index()
         {
-            csWebUser myModel = new csWebUser { FirstName = "gg WP",MailAddress="gg@gmail.com" };
+            csWebUser myModel = new csWebUser { FirstName = "gg WP",MailAddress="gg@gmail.com",
+            mySecondUser = new csWebUser.WebUser {
+             Birthday=new DateTime(1997,3,12),
+              IsActive=true,
+               MailAddress2="example@gmail.com",
+                Password="fdgdfgfd",
+                 PhoneNumber="5872223598"
+            }
+            };
+            myModel.userCountry = "Germany";
+            myModel.lstCountries = new List<string>
+            {
+                "Turkey",
+                "United States",
+                "Greece",
+                "Germany"
+           };
             return View("Index", myModel);
         }
         [HttpPost]
@@ -24,7 +40,7 @@ namespace week_6.Controllers
 
             }
 
-            return View("Index");
+            return Content("user selected country "+myModel.userCountry);
         }
 
         public IActionResult Form2(csWebUser myModel)
@@ -34,7 +50,7 @@ namespace week_6.Controllers
 
             }
             myModel.FirstName = "Furkan";
-            return View("Index", myModel);
+            return Content("user selected language id " + myModel.userLanguageId);
         }
 
         [HttpPost]
