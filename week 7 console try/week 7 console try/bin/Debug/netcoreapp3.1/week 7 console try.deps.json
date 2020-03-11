@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "week 7 console try/1.0.0": {
+        "runtime": {
+          "week 7 console try.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "week 7 console try/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -13,7 +13,8 @@ namespace week_6.Controllers
         [Route("Home")]
         public IActionResult Index()
         {
-            return View("Index");
+            csWebUser myModel = new csWebUser { FirstName = "gg WP",MailAddress="gg@gmail.com" };
+            return View("Index", myModel);
         }
         [HttpPost]
         public IActionResult Form1(csWebUser myModel)

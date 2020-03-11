@@ -1,0 +1,10 @@
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.exe
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.deps.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.runtimeconfig.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.runtimeconfig.dev.json
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.dll
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\bin\Debug\netcoreapp3.1\week 7 console try.pdb
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\obj\Debug\netcoreapp3.1\week 7 console try.AssemblyInfoInputs.cache
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\obj\Debug\netcoreapp3.1\week 7 console try.AssemblyInfo.cs
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\obj\Debug\netcoreapp3.1\week 7 console try.dll
+C:\Users\Furkan Gözükara\Desktop\esnek web 2020\week 7 console try\week 7 console try\obj\Debug\netcoreapp3.1\week 7 console try.pdb

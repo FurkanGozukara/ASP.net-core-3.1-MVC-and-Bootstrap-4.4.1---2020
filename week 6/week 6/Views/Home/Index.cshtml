@@ -10,9 +10,22 @@
         .field-validation-error {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+        .mail-form
+        {
+            line-height:33px;
+        }
     </style>
 }
 
+@Html.TextBoxFor(model => model.FirstName)
+<br />
+@Html.TextBox("gg") @*creates a textbox named as gg id as gg*@
+<br />
+@Html.Editor("a")
+<br />
+ @Html.TextAreaFor(model => model.MailAddress, new { @class="mail-form", @style="padding:5px;" })
+<br />
+<input asp-for="MailAddress" class="mail-form" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" />
 
 <h1>Create user</h1>
 
