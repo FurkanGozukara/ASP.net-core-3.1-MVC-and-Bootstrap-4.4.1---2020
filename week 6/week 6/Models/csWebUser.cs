@@ -21,5 +21,22 @@ namespace week_6.Models
         [Required]
         [EmailAddress(ErrorMessage = "geçerli olmayan bir eposta adresi girdiniz!")]
         public string MailAddress { get; set; }
+
+        public class WebUser
+        {
+            [Phone]
+            public string PhoneNumber { get; set; }
+
+            [EmailAddress]
+            public string MailAddress { get; set; }
+
+            [DataType(DataType.Password)]
+            public string Password { get; set; }
+
+            [DataType(DataType.Date)]
+            public DateTime Birthday { get; set; }
+
+            public bool IsActive { get; set; }
+        }
     }
 }

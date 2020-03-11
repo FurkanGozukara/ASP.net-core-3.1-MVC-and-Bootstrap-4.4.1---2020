@@ -7,15 +7,46 @@
     <title>Index</title>
 
     <style>
+        body{
+            padding-left:50px;
+            padding-top:50px;
+        }
+
         .field-validation-error {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        .mail-form
-        {
-            line-height:33px;
+
+        .mail-form {
+            line-height: 33px;
         }
     </style>
 }
+
+<input asp-for="a"
+
+
+<br />
+
+
+<label asp-for="FirstName"></label>
+<input asp-for="FirstName" />
+<br />
+<label for="FirstName">First name:</label>
+<input type="text" id="FirstName" />
+
+<br />
+<hr />
+
+<form method="post" asp-controller="Home" asp-action="UpdateEntry">
+
+    @Html.TextBox("text1")
+    <br />
+    @Html.TextBox("text2")
+    <br />
+    <input type="submit" value="try update" />
+</form>
+
+<hr />
 
 @Html.TextBoxFor(model => model.FirstName)
 <br />
@@ -23,7 +54,7 @@
 <br />
 @Html.Editor("a")
 <br />
- @Html.TextAreaFor(model => model.MailAddress, new { @class="mail-form", @style="padding:5px;" })
+@Html.TextAreaFor(model => model.MailAddress, new { @class = "mail-form", @style = "padding:5px;" })
 <br />
 <input asp-for="MailAddress" class="mail-form" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" />
 

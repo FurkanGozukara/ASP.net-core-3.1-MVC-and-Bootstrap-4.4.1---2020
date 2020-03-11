@@ -36,5 +36,11 @@ namespace week_6.Controllers
             myModel.FirstName = "Furkan";
             return View("Index", myModel);
         }
+
+        [HttpPost]
+        public IActionResult UpdateEntry(string text1,string text2)
+        {
+            return Content($"update successfull text1: {text1} - text2: {text2}");
+        }
     }
 }
