@@ -6004,11 +6004,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Furkan Gözükara\\Desktop\\esnek web 2020\\week 6\\week 6\\week 6.csproj",
+      "projectUniqueName": "C:\\Users\\Furkan Gözükara\\Desktop\\responsive web mvc 2020\\week 6\\week 6\\week 6.csproj",
       "projectName": "week 6",
-      "projectPath": "C:\\Users\\Furkan Gözükara\\Desktop\\esnek web 2020\\week 6\\week 6\\week 6.csproj",
+      "projectPath": "C:\\Users\\Furkan Gözükara\\Desktop\\responsive web mvc 2020\\week 6\\week 6\\week 6.csproj",
       "packagesPath": "C:\\Users\\Furkan Gözükara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Furkan Gözükara\\Desktop\\esnek web 2020\\week 6\\week 6\\obj\\",
+      "outputPath": "C:\\Users\\Furkan Gözükara\\Desktop\\responsive web mvc 2020\\week 6\\week 6\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
