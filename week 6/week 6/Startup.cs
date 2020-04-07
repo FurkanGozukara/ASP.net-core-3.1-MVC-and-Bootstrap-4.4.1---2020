@@ -11,23 +11,46 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Session;
 
 namespace week_6
 {
     public class Startup
     {
+        public static IConfiguration StaticConfig { get; private set; }
+
+        public Startup(IConfiguration configuration)
+        {
+            StaticConfig = configuration;
+        }
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CustomClasses.SiteConfiguration>(StaticConfig);
+            services.Configure<CustomClasses.SiteConfiguration>(StaticConfig.GetSection("Subtitles"));
+            services.Configure<CustomClasses.SiteConfiguration>(StaticConfig.GetSection("Logging").GetSection("LogLevel"));
             services.AddMvc();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(120*60);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
         }
 
+    
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<CustomClasses.SiteConfiguration> optionsAccessor)
         {
+            CustomClasses.GlobalFunctions.siteConfig = optionsAccessor.Value;
 
             if (env.IsDevelopment())
             {
@@ -38,6 +61,10 @@ namespace week_6
               
                 app.UseExceptionHandler("/Error");
             }
+
+            app.UseSession();
+
+            app.UseCookiePolicy();
 
             app.UseRouting();
 
@@ -66,7 +93,7 @@ namespace week_6
             //});
 
             app.UseStaticFiles(); // For the wwwroot folder           
-
+       
             app.UseDirectoryBrowser(new DirectoryBrowserOptions
             {
                 FileProvider = new PhysicalFileProvider
@@ -75,13 +102,11 @@ namespace week_6
                 ),
                 RequestPath = "/Images"
             });
+
+    
+            //app.UseHttpContextItemsMiddleware();
         }
 
-        public static IConfiguration StaticConfig { get; private set; }
 
-        public Startup(IConfiguration configuration)
-        {
-            StaticConfig = configuration;
-        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿
 @using static week_6.CustomClasses.GlobalFunctions
+@using Microsoft.AspNetCore.Http
+@model week_6.CustomClasses.CustomUser
 
 @section InsideHead {
 
@@ -9,4 +11,56 @@
 Week 9 Body
 
 
-    <p>website title = </p> @returnGivenConfiguration("WebsiteTitle")
+<p>website title = @returnGivenConfiguration("WebsiteTitle") </p>
+
+
+<p>title config 2 = @siteConfig.Title </p>
+
+<p>subtitle 1  = @siteConfig.Subtitle1 </p>
+
+<p>subtitle 2  = @siteConfig.Subtitle2 </p>
+
+<p>microsoft    = @siteConfig.Microsoft </p>
+
+<p>setted date session    = @Context.Session.GetString("date") </p>
+
+<p>current date     = @DateTime.Now</p>
+
+<p>set cookies    = @string.Join(" , ", Context.Request.Cookies.Keys) </p>
+
+@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+        <p>user is authenticated</p>
+    }
+    else
+    {
+        <p>user is not authenticated</p>
+    }
+}
+
+
+<form method="post" asp-controller="Week9" asp-action="SetAuth">
+
+    @Html.TextBox("username")
+    <br />
+    @Html.TextBox("password")
+    <br />
+    <input type="submit" value="set auth" />
+</form>
+
+@{
+    if (Model != null)
+    {
+       
+            <p>user is logged in. username = @Model.srUsername, password = @Model.srPassword , userid = @Model.srUserId </p>
+      
+    }
+    else
+    {
+        <p>user is not logged in with our own system</p>
+    }
+
+
+}
+

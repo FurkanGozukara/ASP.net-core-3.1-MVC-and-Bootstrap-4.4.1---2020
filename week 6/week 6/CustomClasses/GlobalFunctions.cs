@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +11,10 @@ namespace week_6.CustomClasses
 {
     public static class GlobalFunctions
     {
+        public static readonly string srUserInfoKey = "user_login";
+
+        public static SiteConfiguration siteConfig;
+
         private static readonly IConfiguration _configuration;
 
         static GlobalFunctions()
@@ -26,6 +33,17 @@ namespace week_6.CustomClasses
                 return "Invalid Config Name";
             }
  
+        }
+
+        public static void SetSessionData(this ISession session, string key, object value)
+        {
+            session.SetString(key, JsonConvert.SerializeObject(value));
+        }
+
+        public static T GetSessionData<T>(this ISession session, string key)
+        {
+            var value = session.GetString(key);
+            return value == null ? default(T) : JsonConvert.DeserializeObject<T>(value);
         }
     }
 }

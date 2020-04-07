@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using week_6.Models;
 
@@ -30,6 +31,10 @@ namespace week_6.Controllers
                 "Greece",
                 "Germany"
            };
+
+            HttpContext.Session.SetString("date", DateTime.Now.ToString());
+
+          
             return View("Index", myModel);
         }
         [HttpPost]

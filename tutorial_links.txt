@@ -1,3 +1,5 @@
 https://asp.mvc-tutorial.com/getting-started/hello-mvc-world/
 
-last page we are : https://asp.mvc-tutorial.com/core-concepts/options/
+last page we are : 
+
+https://asp.mvc-tutorial.com/httpcontext/query-string-get-data/
