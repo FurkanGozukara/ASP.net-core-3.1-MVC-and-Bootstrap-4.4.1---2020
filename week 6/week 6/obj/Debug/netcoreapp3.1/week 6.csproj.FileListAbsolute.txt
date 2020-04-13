@@ -211,6 +211,16 @@ C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Deb
 C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\week 6.pdb
 C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\Razor\Views\Week9\Week9.cshtml.g.cs
 C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs
-C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\week 6.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
 C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\Razor\Views\Week11\Index.cshtml.g.cs
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\week 6.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Furkan Gözükara\Desktop\responsive web mvc 2020\week 6\week 6\obj\Debug\netcoreapp3.1\Razor\Views\ToDoListItem\Index.cshtml.g.cs

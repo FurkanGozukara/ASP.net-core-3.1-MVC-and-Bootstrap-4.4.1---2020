@@ -14,7 +14,7 @@ namespace week_6.Controllers
             var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
             if ((exceptionHandlerPathFeature != null) && (exceptionHandlerPathFeature.Error != null))
             {
-                return Content(exceptionHandlerPathFeature.Error.StackTrace.ToString());
+                return Content(exceptionHandlerPathFeature.Error.Message +"<br/><hr/>"+exceptionHandlerPathFeature.Error.StackTrace.ToString());
             }
             return View("Error");
         }

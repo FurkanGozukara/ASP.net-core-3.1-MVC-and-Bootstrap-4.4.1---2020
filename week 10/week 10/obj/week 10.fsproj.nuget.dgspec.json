@@ -41,10 +41,6 @@
             "FSharp.Core": {
               "target": "Package",
               "version": "[4.7.0, )"
-            },
-            "Microsoft.AspNetCore.Session": {
-              "target": "Package",
-              "version": "[2.2.0, )"
             }
           },
           "imports": [

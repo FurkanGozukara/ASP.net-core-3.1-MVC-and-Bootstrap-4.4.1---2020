@@ -14,6 +14,11 @@ namespace week_6.Controllers
         [Route("Home")]
         public IActionResult Index()
         {
+            var userId = HttpContext.Request.Cookies["user_id"];
+            var not_exists = HttpContext.Request.Cookies["not_exists"];
+            var persistent_cookie = HttpContext.Request.Cookies["this_is_a_long_cookie"];
+            var path_cookie = HttpContext.Request.Cookies["path_cookie"];
+
             csWebUser myModel = new csWebUser { FirstName = "gg WP",MailAddress="gg@gmail.com",
             mySecondUser = new csWebUser.WebUser {
              Birthday=new DateTime(1997,3,12),
