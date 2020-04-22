@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Custom Page Title";
+}
+
+<h1>Hello World. The font size will change according to the browser width</h1>
+
+<div>
+
+    @*
+            example of z-index
+        <p style="position:absolute; top:0px; left:0px; z-index:100; background-color:red;">z index 100</p>
+        <p style="position:absolute; top:0px; left:0px; z-index:185;  background-color:blue;">z index 185</p>
+        <p style="position:absolute; top:0px; left:0px; z-index:85;  background-color:purple;">z index 085</p>*@
+
+
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            One of three columns col-sm
+        </div>
+        <div class="col-sm">
+            One of three columns col-sm
+        </div>
+        <div class="col-sm">
+            One of three columns col-sm
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md">
+            One of three columns col-md
+        </div>
+        <div class="col-md">
+            One of three columns col-md
+        </div>
+        <div class="col-md">
+            One of three columns col-md
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col border border-primary">
+            1 of 2 border-primary
+        </div>
+        <div class="col border border-danger">
+            2 of 2 border border-danger
+        </div>
+    </div>
+    <div class="row border-dark">
+        <div class="col">
+            1 of 3 border-dark
+        </div>
+        <div class="col border">
+            2 of 3
+        </div>
+        <div class="col">
+            3 of 3
+        </div>
+    </div>
+</div>
+
+
+<div class="container border">
+    <div class="row">
+        <div class="col border alert-dark m-4">
+            Level 1: .col-sm-9
+            <div class="row">
+                <div class="col border alert-danger m-2">
+                    Level 2: .col-8 .col-sm-6
+                </div>
+                <div class="col border alert-heading m-3">
+                    Level 2: .col-4 .col-sm-6
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container border">
+    <div class="row">
+        <div class="col border alert-dark p-4">
+            Level 1: .col-sm-9
+            <div class="row">
+                <div class="col border alert-danger p-2">
+                    Level 2: .col-8 .col-sm-6
+                </div>
+                <div class="col border alert-heading p-3">
+                    Level 2: .col-4 .col-sm-6
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-9 border m-1">.col-9</div>
+        <div class="col-4 border m-1">.col-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.</div>
+        <div class="col-6 border m-1">.col-6<br>Subsequent columns continue along the new line.</div>
+    </div>
+</div>
+
+
+<div class="container px-lg-5 border">
+    <div class="row mx-lg-n5">
+        <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
+        <div class="col py-3 px-lg-5 border bg-light">Custom column padding</div>
+    </div>
+</div>

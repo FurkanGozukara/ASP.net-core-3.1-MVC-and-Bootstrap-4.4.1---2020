@@ -1,0 +1,28 @@
+﻿
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @await Html.PartialAsync("_Favicons")
+
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/customCSS/header.css" rel="stylesheet" type="text/css" />
+    <title>@ViewBag.Title</title>
+ 
+</head>
+<body>
+    <div class="container-xl">
+
+        @RenderBody()
+
+    </div>
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>
