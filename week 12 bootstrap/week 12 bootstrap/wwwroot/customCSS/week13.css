@@ -1,0 +1,40 @@
+﻿
+
+.parentDivFlex
+{
+    padding:15px;
+    width:700px;
+    border-width:1px;
+    border-style:solid;
+    margin:25px;
+}
+
+.childrenFlexExample {
+    padding: 5px;
+    margin: 5px;
+    border-width: 1px;
+    width: 200px;
+    border-style: solid;
+}
+
+.checkbox-1x {
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+}
+
+.checkbox-2x {
+    transform: scale(2);
+    -webkit-transform: scale(2);
+}
+
+h1 {
+    font-size: 5.9vw;
+}
+
+h2 {
+    font-size: 3.0vh;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+}
