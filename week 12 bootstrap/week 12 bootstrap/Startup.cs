@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
+using week_12_bootstrap.Models;
+
 
 namespace week_12_bootstrap
 {
@@ -20,6 +24,7 @@ namespace week_12_bootstrap
         {
             services.AddMvc();
 
+
             services.AddDistributedMemoryCache();
 
             services.AddSession(options =>
@@ -29,7 +34,16 @@ namespace week_12_bootstrap
                 options.Cookie.IsEssential = true;
             });
 
+
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+           .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+           .AddJsonFile("appsettings.json")
+           .Build();
+
+            services.AddDbContext<StudentContext>(options =>
+        options.UseSqlServer(configuration.GetConnectionString("DbConnectionString")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

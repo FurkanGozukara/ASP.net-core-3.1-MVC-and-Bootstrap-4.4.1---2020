@@ -1,0 +1,277 @@
+﻿
+<!DOCTYPE html>
+
+@model week_12_bootstrap.Models.modelWeek14
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Week14</title>
+    <style>
+        #loadingimage {
+            position: fixed;
+            left: 50%;
+            top: 35%;
+            display: none;
+            z-index: 1000;
+            height: 128px;
+            width: 128px;
+        }
+        </style>
+</head>
+<body>
+    <form method="post" action="/week14/createStudentRegularForm">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please enter the details below.</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group col-md-5">
+                        <label>Student Name</label>
+                        <input type="text" name="StudentName" id="StudentName" class="form-control" placeholder="Enter Student Name" required="" />
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label>Student Address</label>
+                        <input type="text" name="StudentAddress" id="StudentAddress" class="form-control" placeholder="Enter Student Address" required="" />
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <div style="float: right; display:inline-block;">
+                            <button type="submit" class="btn btn-primary" name="submitButton" id="btnSave" value="Save">
+                                save student full postback way
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form method="post" action="/week14/displayStudents">
+        <button type="submit" class="btn btn-primary" name="submitButton" id="btnSave" value="Save">
+            fetch all students
+        </button>
+    </form>
+
+    @{
+        if (Model != null)
+        {
+            foreach (var vrStudent in Model.lstStudents)
+            {
+                <div class="card float-left" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Id: @vrStudent.studentID</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Name: @vrStudent.studentName</h6>
+                        <p class="card-text">Address: @vrStudent.studentAddress</p>
+
+                    </div>
+                </div>
+            }
+        }
+    }
+
+
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">ASYNC postback - Please enter the details below.</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group col-md-5">
+                    <label>Student Name</label>
+                    <input type="text" name="StudentName" id="async_StudentName" class="form-control" placeholder="Enter Student Name" required="" />
+                </div>
+                <div class="form-group col-md-5">
+                    <label>Student Address</label>
+                    <input type="text" name="StudentAddress" id="async_StudentAddress" class="form-control" placeholder="Enter Student Address" required="" />
+                </div>
+
+                <div class="form-group col-md-4">
+                    <div style=" display:inline-block;" id="msgSave">
+                        <input class="btn btn-primary" name="submitButton" id="async_btnSave" value="async save student" type="button">
+
+                    </div>
+                    <div style=" display:inline-block;">
+                        <input class="btn btn-primary" name="submitButton" id="async_btnLoad" value="async load student" type="button">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="tblStudent" class="table table-bordered table-striped table-responsive table-hover">
+        <thead>
+            <tr>
+                <th align="left" class="productth">ID</th>
+                <th align="left" class="productth">Student Name</th>
+                <th align="left" class="productth">Student Address</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+
+    <script type="text/javascript">
+
+    $(function () {
+
+        $("#async_btnLoad").click(function () {
+            LoadData();
+        });
+
+        $("#async_btnSave").click(function () {
+               $("#async_btnSave").attr("disabled", true);      $('#loadingimage').show();
+            //alert("");
+            var asyncStudent = {};
+            asyncStudent.studentName = $("#async_StudentName").val();
+            asyncStudent.studentAddress = $("#async_StudentAddress").val();
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("async_createStudent")',
+                data: JSON.stringify(asyncStudent) ,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (returnedData) {
+                    $('#loadingimage').hide();
+                    $("#async_btnSave").attr("disabled", false);
+                    console.log(returnedData);
+            $('#msgSave').append('<div class="badge-success">'+returnedData+'</div>');
+
+                    LoadData();
+                },
+                error: function () {
+                    $('#loadingimage').hide();
+                         $("#async_btnSave").attr("disabled", false);
+                    alert("Error while inserting data");
+                }
+            });
+            return false;
+        });
+    });
+
+    function LoadData() {
+        $("#tblStudent tbody tr").remove();
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("async_getStudent")',
+            dataType: 'json',
+            data: {},
+            success: function (data) {
+
+
+                $.each(data, function (i, item) {
+                    var rows = "<tr>"
+                    + "<td class='prtoducttd'>" + item.studentID + "</td>"
+                    + "<td class='prtoducttd'>" + item.studentName + "</td>"
+                    + "<td class='prtoducttd'>" + item.studentAddress + "</td>"
+                        + "</tr>";
+                      $('#tblStudent tbody').hide().append(rows).show('slow');
+                });
+            },
+            error: function (ex) {
+                var r = jQuery.parseJSON(response.responseText);
+                alert("Message: " + r.Message);
+                alert("StackTrace: " + r.StackTrace);
+                alert("ExceptionType: " + r.ExceptionType);
+            }
+        });
+        return false;
+    }
+    </script>
+
+    <img id="loadingimage" src="~/images/831.gif">
+
+
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Collapsible Group Item #1
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Collapsible Group Item #2
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Collapsible Group Item #3
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">..dsfdsfdsfds.</div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">..hfdhdfhdf.</div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">.hdfhdfh..</div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">.dfhfdhgdf..</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
